@@ -1,0 +1,22 @@
+<mat-toolbar>
+    <div class="nav">
+        <span>
+            <ng-container *ngTemplateOutlet="customtitleTemplate"></ng-container>
+        </span>
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="gotoForm()">
+                    <mat-icon>home</mat-icon>
+                    <span>Admin</span>
+                </button>
+                <button mat-menu-item (click)="gotoPosts()">
+                    <mat-icon>share</mat-icon>
+                    <span>User</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>

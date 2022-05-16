@@ -1,0 +1,18 @@
+<app-header [titleTemplate]="title"></app-header>
+<ng-template #title>BLog </ng-template>
+<ng-container *ngIf="posts$ | async as posts">
+    <div class="container">
+        <mat-card class="card" *ngFor="let post of posts">
+            <mat-card-title (click)="gotoDetail(post)">
+                {{post.title | uppercase}}
+            </mat-card-title>
+            <mat-card-content>
+                <p>{{post.body | textSize: 50}}</p>
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+                <button mat-button color="primary" (click)="gotoDetail(post)">More...</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</ng-container>

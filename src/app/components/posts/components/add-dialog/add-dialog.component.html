@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add Comment</h1>
+<form [formGroup]="form" (submit)="onSubmit()" novalidate>
+    <div class="container__form-dialog">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Comment</mat-label>
+            <textarea matInput placeholder="Comment..." formControlName="comment"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="container__button">
+        <button mat-button color="primary" (click)="onNoClick()">...No</button>
+        <button mat-button color="accent" type="submit" cdkFocusInitial  [disabled]="form.invalid">Accept</button>
+    </div>
+</form>
