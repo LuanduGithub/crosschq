@@ -2,9 +2,17 @@
 <form [formGroup]="form" (submit)="onSubmit()" novalidate>
     <div class="container__form-dialog">
         <mat-form-field appearance="fill">
-            <mat-label>Title</mat-label>
-            <input matInput type="text" formControlName="email">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+
+            <mat-error *ngIf="form?.get('email')?.errors ">
+                Please enter a valid email address
+            </mat-error>
+
+            <mat-hint>Errors appear instantly!</mat-hint>
+
         </mat-form-field>
+
         <mat-form-field appearance="fill">
             <mat-label>Comment</mat-label>
             <textarea matInput placeholder="Comment..." formControlName="comment"></textarea>
@@ -12,6 +20,6 @@
     </div>
     <div class="container__button">
         <button mat-button color="primary" (click)="onNoClick()">...No</button>
-        <button mat-button color="accent" type="submit" cdkFocusInitial  [disabled]="form.invalid">Accept</button>
+        <button mat-button color="accent" type="submit" cdkFocusInitial [disabled]="form.invalid">Accept</button>
     </div>
 </form>

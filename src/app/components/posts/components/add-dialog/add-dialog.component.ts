@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Comments, Post } from './../../../../core/models/post.model';
 import { SharedDataService } from './../../../../services/shared-services.service';
+
 @Component({
   selector: 'app-add-dialog',
   templateUrl: './add-dialog.component.html',
@@ -11,6 +12,7 @@ import { SharedDataService } from './../../../../services/shared-services.servic
 export class AddDialogComponent implements OnInit {
   public form!: FormGroup;
   public post!: Post | undefined;
+
   constructor(
     public dialogRef: MatDialogRef<AddDialogComponent>,
     private formBuilder: FormBuilder,
@@ -19,7 +21,7 @@ export class AddDialogComponent implements OnInit {
 
   public ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
       comment: [null, Validators.required]
     });
     this.post = this.sharedDataService.post$.getValue();
