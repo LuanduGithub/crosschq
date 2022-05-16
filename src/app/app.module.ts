@@ -53,6 +53,7 @@ import { CommonModule } from '@angular/common';
     MatDialogModule
   ],
   providers: [],
+  entryComponents: [AddDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
