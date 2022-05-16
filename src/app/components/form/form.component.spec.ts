@@ -8,9 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Router } from '@angular/router';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { HeaderComponent } from 'src/app/core/header/header.component';
+import { AppRoutingModule } from './../../app-routing.module';
+import { HeaderComponent } from './../../core/header/header.component';
 
 import { FormComponent } from './form.component';
 

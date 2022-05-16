@@ -8,11 +8,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { HeaderComponent } from 'src/app/core/header/header.component';
-import { Post } from 'src/app/core/models/post.model';
-import { TextSizePipe } from 'src/app/core/pipes/text-size.pipe';
-import { SharedDataService } from 'src/app/services/shared-services.service';
+import { AppRoutingModule } from './../..//app-routing.module';
+import { HeaderComponent } from './../../core/header/header.component';
+import { Post } from './../../core/models/post.model';
+import { TextSizePipe } from './../../core/pipes/text-size.pipe';
+import { SharedDataService } from './../..//services/shared-services.service';
 
 import { PostsComponent } from './posts.component';
 

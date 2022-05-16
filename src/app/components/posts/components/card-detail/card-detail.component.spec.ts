@@ -2,8 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { HeaderComponent } from 'src/app/core/header/header.component';
+import { AppRoutingModule } from './../..//app-routing.module';
+import { HeaderComponent } from './../../core/header/header.component';
 
 import { CardDetailComponent } from './card-detail.component';
 

@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppRoutingModule } from './../..//app-routing.module';
 import { Router } from '@angular/router';
 import { HeaderComponent } from './header.component';
 import { TemplateRef } from '@angular/core';

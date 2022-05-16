@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { take } from 'rxjs/operators';
-import { Comments, Post } from 'src/app/core/models/post.model';
-import { SharedDataService } from 'src/app/services/shared-services.service';
+import { Comments, Post } from './../../core/models/post.model';
+import { SharedDataService } from './../..//services/shared-services.service';
 @Component({
   selector: 'app-add-dialog',
   templateUrl: './add-dialog.component.html',

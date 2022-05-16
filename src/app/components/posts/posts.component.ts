@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/core/models/post.model';
-import { SharedDataService } from 'src/app/services/shared-services.service';
+import { Post } from './../../core/models/post.model';
+import { SharedDataService } from './../..//services/shared-services.service';
 
 @Component({
   selector: 'app-posts',
