@@ -8,25 +8,32 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { AppRoutingModule } from './../..//app-routing.module';
+import { AppRoutingModule } from './../../app-routing.module';
 import { HeaderComponent } from './../../core/header/header.component';
 import { Post } from './../../core/models/post.model';
 import { TextSizePipe } from './../../core/pipes/text-size.pipe';
-import { SharedDataService } from './../..//services/shared-services.service';
+import { SharedDataService } from './../../services/shared-services.service';
 
 import { PostsComponent } from './posts.component';
 
 describe('PostsComponent', () => {
   let component: PostsComponent;
   let fixture: ComponentFixture<PostsComponent>;
-  let router = {
+  const router = {
     navigate: jasmine.createSpy('navigate')
-  }
+  };
   const service = jasmine.createSpyObj(SharedDataService, ['getPosts']);
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [PostsComponent, TextSizePipe, HeaderComponent],
-      imports: [AppRoutingModule, HttpClientModule, MatCardModule, MatButtonModule, MatDividerModule, MatMenuModule, MatToolbarModule, MatIconModule],
+      imports: [AppRoutingModule,
+        HttpClientModule,
+        MatCardModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatIconModule],
       providers: [{ provide: SharedDataService, useValue: service }, { provide: Router, useValue: router }]
     })
       .compileComponents();
@@ -43,20 +50,19 @@ describe('PostsComponent', () => {
   });
   it('should navigate to /detail', () => {
     service.post$ = new BehaviorSubject('');
-    spyOn(service.post$, 'next').and.callThrough;
     const post: Post = {
-      "id": 1,
-      "title": "test",
-      "body": "test",
-      "comments": [
+      id: 1,
+      title: 'test',
+      body: 'test',
+      comments: [
         {
-          "email": "test@mail.com",
-          "comment": "test"
+          email: 'test@mail.com',
+          comment: 'test'
         }
       ]
     };
     component.gotoDetail(post);
-    expect(service.post$.next).toHaveBeenCalledWith(post);
+    expect(service.post$.getValue()).toEqual(post);
     expect(router.navigate).toHaveBeenCalledWith(['/detail']);
   });
 });

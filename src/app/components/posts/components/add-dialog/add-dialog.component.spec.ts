@@ -15,7 +15,7 @@ describe('AddDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AddDialogComponent],
-      imports: [ReactiveFormsModule,BrowserAnimationsModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+      imports: [ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatButtonModule],
       providers: [{ provide: MatDialogRef, useValue: {} }],
     })
       .compileComponents();

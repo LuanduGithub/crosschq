@@ -20,7 +20,17 @@ describe('FormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FormComponent, HeaderComponent],
-      imports: [ReactiveFormsModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule]
+      imports: [
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatIconModule]
     })
       .compileComponents();
   });

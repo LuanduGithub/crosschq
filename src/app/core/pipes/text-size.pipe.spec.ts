@@ -7,7 +7,7 @@ describe('TextSizePipe', () => {
   });
   it('should transform the of a paragraph', () => {
     const pipe = new TextSizePipe();
-    let transformResult = pipe.transform('0123456789', 2);
+    const transformResult = pipe.transform('0123456789', 2);
     expect(transformResult).toEqual('01...');
-  })
+  });
 });
