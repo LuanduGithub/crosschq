@@ -40,7 +40,7 @@ export class FormComponent implements OnInit {
       postsEdit = this.posts?.map((post) => {
         return {
           title: post.id === this.post?.id ? this.form.controls.title.value : post.title,
-          body: post.id === this.post?.body ? this.form.controls.comment.value : post.body,
+          body: post.id === this.post?.id ? this.form.controls.comment.value : post.body,
           id: post.id,
           comments: post.comments
         };
